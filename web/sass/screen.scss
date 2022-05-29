@@ -1,0 +1,376 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+
+@import "compass/reset";
+
+$textcolor:rgb(0, 0, 0);
+$maincolor : rgb(86, 86, 227);
+$bordercolor : rgb(239, 239, 239);
+
+$fonstsizesmallest : 15px;
+$fonstsizesmall : 20px;
+$fonstsizemedium : 30px;
+$fonstsizelarge : 35px;
+$fonstsizelargeest : 40px;
+
+$paddingtop : 7%;
+$paddingleft : 3%;
+
+@mixin buttontype {
+    
+    background-color: $maincolor;
+    border-color: $maincolor;
+    border-style: solid;
+    padding: 10px;
+    border-width: 2px;
+    color: $textcolor;
+    text-decoration: none;
+}
+
+@mixin buttontype2 {
+    border-color: $maincolor;
+    border-style: solid;
+    padding: 10px;
+    border-width: 2px;
+    color: $textcolor;
+    text-decoration: none;
+    
+}
+
+
+* {
+    box-sizing: border-box;
+  }
+  
+
+body
+{
+    display: flex;
+    flex-direction: column;
+    color: $textcolor;
+    font-size: $fonstsizesmall;
+    max-width: 100%;
+    overflow-x: hidden;
+
+  
+
+}
+
+a
+{
+    color: $textcolor;
+    text-decoration: none;
+}
+
+h1
+{
+    font-weight: bold;
+    font-size: $fonstsizelarge;
+    text-align: center;
+}
+
+h2
+{
+    font-weight: bold;
+    font-size: $fonstsizemedium;
+    
+}
+
+h4
+{
+    display: none;
+}
+
+section
+{
+    padding: $paddingtop $paddingleft;
+    display: flex;
+  
+ 
+    
+ 
+
+
+
+    .row
+    {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: $paddingleft;
+       
+        
+    }
+  
+    .column
+    {
+        flex: 50%;
+        padding-left: $paddingleft;
+        max-width: 50%;
+     
+       
+       
+       
+
+        a
+        {
+            @include buttontype;
+            
+        }
+
+        p
+        {
+            line-height: 2;
+            margin-bottom: $paddingleft;
+            
+        }
+
+        img
+        {
+            max-width: 100%;
+           
+            
+           
+        }
+
+    }
+
+
+
+    .three-column
+    {
+        flex: 30%;
+        padding: $paddingleft;
+        text-align: center;
+        max-width: 30%;
+    
+
+        img
+        {
+            max-width: 400px;
+            max-width: 100%;
+        }
+
+    
+    }
+
+    ul li
+    {
+        padding-right: 15px;
+        display: inline-block;
+
+        i
+        {
+            font-size: $fonstsizemedium;
+        }
+    }
+
+}
+
+
+
+.copyright
+{
+    text-align: center;
+}
+
+
+
+
+
+
+.first-header, .second-header
+{
+    display: flex;
+    flex-direction: row;
+
+    div
+    {
+        padding: 5px $paddingleft;
+        flex: 50%;
+
+        ul li
+        {
+            padding-right: 15px;
+            display: inline-block;
+
+            i
+            {
+                font-size: $fonstsizemedium;
+            }
+        }
+
+        
+    }
+    
+
+    div:nth-child(2)
+    {
+        text-align: right;
+    }
+
+    
+}
+
+#section-main
+{
+    background-image:url(images/images_2.jpg);
+    height: 600px;
+    background-repeat: no-repeat;
+    background-position:right top;
+    background-size: cover;
+ 
+
+    div
+    {
+       padding: 8%;
+       flex: 60%;
+       max-width: 60%;
+       line-height: 2;
+       max-height: 100%;
+       overflow: hidden;
+    
+    a:first-of-type
+    {
+       
+        @include buttontype;
+    }
+    
+    a:nth-child(2n)
+    {
+        @include buttontype2;
+      
+    }
+     
+    }
+ 
+}
+
+.container
+{
+    position: relative;
+    margin: 0 auto;
+
+
+    .section-gallery
+    {
+    
+
+        .gallery-img
+        {
+            
+            
+            max-width: 70%;
+            left: 50%;
+            position: relative;
+            transform: translateX(-50%);
+
+            
+            img
+            {
+                
+           
+                max-width: 100%;
+            
+            }
+
+        }
+        
+    }
+
+    .preview,
+    .next 
+    {
+   
+    position: absolute;
+    top: 40%;
+    width: auto;
+    margin-top: -20%;
+    background-color: aqua;
+
+
+    }
+
+    .next {
+    right: 0;
+    
+    }
+
+}
+@media screen and (max-width: 900px)
+{
+
+        section, .row
+    {
+        
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+     
+    
+        .column
+        {
+            flex: 100%;
+            max-width: 100%;
+            padding: 0;
+        }
+
+        .three-column
+        {
+            flex: 100%;
+            max-width: 100%;
+        }
+
+     
+        a
+        {
+            width: 100%;
+           
+        }
+
+       
+    }
+
+    #section-main
+    {
+     
+    
+        div
+        {
+           
+           flex: 100%;
+           max-width: 100%;
+           
+        }
+    }
+
+        .container
+    {
+        
+
+
+        .section-gallery
+        {
+        
+
+            .gallery-img
+            {
+                
+                
+            
+                img
+                {
+                    
+                max-width: 90%;
+            
+
+                
+                }
+
+            }
+            
+        }
+    }
+}
